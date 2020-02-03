@@ -56,6 +56,7 @@ if __name__ == '__main__':
             if result.status == 200:
                 url = conf['UrlPrefix'] + '/' + str(key)
                 print('Upload successfully! url:', url)
-                data.replace(img, url)
+                data = data.replace(img, url)
             else:
                 print('Upload error, result: ', result.__str__())
+    open(sys.argv[1]+'.convert', mode='w', encoding='utf-8').write(data)
